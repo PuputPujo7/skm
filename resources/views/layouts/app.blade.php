@@ -31,6 +31,18 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <!-- Nucleo Icons -->
+    <link href="css/nucleo-icons.css" rel="stylesheet">
+    <link href="css/nucleo-svg.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/nucleo-svg.css" rel="stylesheet">
+    <!-- CSS Files -->
+    <link href="css/argon-design-system.css?v=1.2.0" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css">
+
     <!-- =======================================================
   * Template Name: FlexStart - v1.12.0
   * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
@@ -118,6 +130,37 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <script>
+        function scrollToDownload() {
+    
+            if ($('.section-download').length != 0) {
+                $("html, body").animate({
+                    scrollTop: $('.section-download').offset().top
+                }, 1000);
+            }
+        }
+    </script>
+    <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+    <script>
+        window.TrackJS &&
+        TrackJS.install({
+            token: "ee6fab19c5a04ac1a32a645abde4613a",
+            application: "argon-design-system-pro"
+        });
+    </script>
+        <!--jQuery-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!--Plugin JavaScript file-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+        <script>
+            $(".js-range-slider").ionRangeSlider({
+                skin: "big",
+                from: "4",
+                grid : "true",
+                values : ['Tidak Baik', 'Kurang Baik', 'Baik', 'Sangat Baik']
+            });
+        </script>
 
 </body>
 

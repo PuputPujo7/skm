@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Pertanyaan;
 use App\Http\Livewire\Portal;
 use Illuminate\Support\Facades\Route;
 
@@ -20,8 +21,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('portal');
 });
+Route::get('/pertanyaan', function () {
+    return view('pertanyaan');
+});
 Route::get('/form', function () {
     return view('nonpemohon');
 });
 
 Route::get('/portal', Portal::class)->name('livewire.portal');
+Route::get('/pertanyaan', Pertanyaan::class)->name('livewire.pertanyaan');
