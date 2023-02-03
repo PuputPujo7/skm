@@ -1,5 +1,5 @@
-<section id="hero" class="hero d-flex align-items-center">
-    {{-- <div class="container py-md rounded">
+<section class="section section-xl section-shaped">
+    <div class="container py-md rounded">
         <div class="col-lg-12">
             <div class="bg-blue-400 shadow border-0 rounded">
                 <div class="card-header bg-white pb-5">
@@ -288,97 +288,81 @@
                 </div>
             </div>
         </div>
-    </div> --}}
-    <!-- component -->
-    <div class="max-w-4xl flex items-center h-full lg:h-screen flex-wrap mx-auto my-48 lg:my-0">
-        {{-- <div class="col-lg-12 rounded"> --}}
-            <div  id="id" class="bg-white shadow border-0 rounded">
-                {{-- <div class="card-header bg-white pb-5"> --}}
-                    <div class="text-muted text-center p-3 font-semibold border-b border-green-200">
-                        <h4>Form Survey Kepuasan Masyarakat</h4>
-                    </div>
-                {{-- </div> --}}
+    </div>
+    <div class="container py-md mt-2 rounded">
+        <div class="col-lg-12">
+            <div class="bg-red-400 shadow border-0 rounded">
                 <div class="p-5 flex font-sans">
-                    {{-- <div class="flex-none w-48 relative">
+                    <div class="flex-none w-48 relative">
                     <img src="/classic-utility-jacket.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-                    </div> --}}
-                    @foreach ($pertanyaans as $pertanyaan)
-                    <form class="flex-auto p-6">
-                        <h5 class="text-dark font-weight-bold">{{ $pertanyaan->pertanyaan }}</h5>
-                        {{-- <h5 class="text-dark font-weight-bold">Bagaimana pemahaman saudara tentang kemudahan
-                            prosedur pelayanan dan pengaduan di Dinas Perizinan?</h5> --}}
-                    {{-- @endforeach --}}
-                    <!-- rating -->
-                    {{-- @foreach ($data_skms as $data) --}}
-                    <div class="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
-                        <div class='rating flex flex-row justify-center gap-3'>
-                            <svg class="h-12 transition-all duration-100 fill-gray-400  fill-yellow-400  cursor-pointer"
-                                viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <path
-                                    d="M575.852903 115.426402L661.092435 288.054362c10.130509 20.465674 29.675227 34.689317 52.289797 37.963825l190.433097 27.62866c56.996902 8.288598 79.7138 78.281203 38.475467 118.496253l-137.836314 134.35715c-16.372539 15.963226-23.84251 38.987109-19.954032 61.49935l32.540421 189.716799c9.721195 56.792245-49.833916 100.077146-100.793444 73.267113L545.870691 841.446188a69.491196 69.491196 0 0 0-64.67153 0l-170.376737 89.537324c-50.959528 26.810033-110.51464-16.474868-100.793444-73.267113L242.569401 667.9996c3.888478-22.512241-3.581493-45.536125-19.954032-61.49935L84.779055 472.245428c-41.238333-40.215049-18.521435-110.207655 38.475467-118.496252l190.433097-27.62866c22.61457-3.274508 42.159288-17.498151 52.289797-37.963826L451.319277 115.426402c25.479764-51.675827 99.053862-51.675827 124.533626 0z"
-                                    ></path>
-                            </svg>
-                            <svg class="h-12 transition-all duration-100 fill-gray-400  cursor-pointer"
-                                viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <path
-                                    d="M575.852903 115.426402L661.092435 288.054362c10.130509 20.465674 29.675227 34.689317 52.289797 37.963825l190.433097 27.62866c56.996902 8.288598 79.7138 78.281203 38.475467 118.496253l-137.836314 134.35715c-16.372539 15.963226-23.84251 38.987109-19.954032 61.49935l32.540421 189.716799c9.721195 56.792245-49.833916 100.077146-100.793444 73.267113L545.870691 841.446188a69.491196 69.491196 0 0 0-64.67153 0l-170.376737 89.537324c-50.959528 26.810033-110.51464-16.474868-100.793444-73.267113L242.569401 667.9996c3.888478-22.512241-3.581493-45.536125-19.954032-61.49935L84.779055 472.245428c-41.238333-40.215049-18.521435-110.207655 38.475467-118.496252l190.433097-27.62866c22.61457-3.274508 42.159288-17.498151 52.289797-37.963826L451.319277 115.426402c25.479764-51.675827 99.053862-51.675827 124.533626 0z"
-                                    ></path>
-                            </svg>
-                            <svg class="h-12 transition-all duration-100 fill-gray-400  cursor-pointer"
-                                viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <path
-                                    d="M575.852903 115.426402L661.092435 288.054362c10.130509 20.465674 29.675227 34.689317 52.289797 37.963825l190.433097 27.62866c56.996902 8.288598 79.7138 78.281203 38.475467 118.496253l-137.836314 134.35715c-16.372539 15.963226-23.84251 38.987109-19.954032 61.49935l32.540421 189.716799c9.721195 56.792245-49.833916 100.077146-100.793444 73.267113L545.870691 841.446188a69.491196 69.491196 0 0 0-64.67153 0l-170.376737 89.537324c-50.959528 26.810033-110.51464-16.474868-100.793444-73.267113L242.569401 667.9996c3.888478-22.512241-3.581493-45.536125-19.954032-61.49935L84.779055 472.245428c-41.238333-40.215049-18.521435-110.207655 38.475467-118.496252l190.433097-27.62866c22.61457-3.274508 42.159288-17.498151 52.289797-37.963826L451.319277 115.426402c25.479764-51.675827 99.053862-51.675827 124.533626 0z"
-                                    ></path>
-                            </svg>
-                            <svg class="h-12 transition-all duration-100 fill-gray-400  cursor-pointer"
-                                viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <path
-                                    d="M575.852903 115.426402L661.092435 288.054362c10.130509 20.465674 29.675227 34.689317 52.289797 37.963825l190.433097 27.62866c56.996902 8.288598 79.7138 78.281203 38.475467 118.496253l-137.836314 134.35715c-16.372539 15.963226-23.84251 38.987109-19.954032 61.49935l32.540421 189.716799c9.721195 56.792245-49.833916 100.077146-100.793444 73.267113L545.870691 841.446188a69.491196 69.491196 0 0 0-64.67153 0l-170.376737 89.537324c-50.959528 26.810033-110.51464-16.474868-100.793444-73.267113L242.569401 667.9996c3.888478-22.512241-3.581493-45.536125-19.954032-61.49935L84.779055 472.245428c-41.238333-40.215049-18.521435-110.207655 38.475467-118.496252l190.433097-27.62866c22.61457-3.274508 42.159288-17.498151 52.289797-37.963826L451.319277 115.426402c25.479764-51.675827 99.053862-51.675827 124.533626 0z"
-                                    ></path>
-                            </svg>
-                        </div> 
-                        
                     </div>
-                    @endforeach
-                    
+                    <form class="flex-auto p-6">
+                    <div class="flex flex-wrap">
+                        <h1 class="flex-auto text-lg font-semibold text-slate-900">
+                        Classic Utility Jacket
+                        </h1>
+                        <div class="text-lg font-semibold text-slate-500">
+                        $110.00
+                        </div>
+                        <div class="w-full flex-none text-sm font-medium text-slate-700 mt-2">
+                        In stock
+                        </div>
+                    </div>
+                    <div class="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
+                        <div class="space-x-2 flex text-sm">
+                        <label>
+                            <input class="sr-only peer" name="size" type="radio" value="xs" checked />
+                            <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
+                            XS
+                            </div>
+                        </label>
+                        <label>
+                            <input class="sr-only peer" name="size" type="radio" value="s" />
+                            <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
+                            S
+                            </div>
+                        </label>
+                        <label>
+                            <input class="sr-only peer" name="size" type="radio" value="m" />
+                            <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
+                            M
+                            </div>
+                        </label>
+                        <label>
+                            <input class="sr-only peer" name="size" type="radio" value="l" />
+                            <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
+                            L
+                            </div>
+                        </label>
+                        <label>
+                            <input class="sr-only peer" name="size" type="radio" value="xl" />
+                            <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
+                            XL
+                            </div>
+                        </label>
+                        </div>
+                    </div>
                     <div class="flex space-x-4 mb-6 text-sm font-medium">
                         <div class="flex-auto flex space-x-4">
-                        <button class="h-10 px-6 font-semibold rounded-md bg-blue-500 text-white" type="submit">
-                            Submit
+                        <button class="h-10 px-6 font-semibold rounded-md bg-black text-white" type="submit">
+                            Buy now
+                        </button>
+                        <button class="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900" type="button">
+                            Add to bag
                         </button>
                         </div>
-                        {{-- <button class="flex-none flex items-center justify-center w-9 h-9 rounded-md text-slate-300 border border-slate-200" type="button" aria-label="Like">
+                        <button class="flex-none flex items-center justify-center w-9 h-9 rounded-md text-slate-300 border border-slate-200" type="button" aria-label="Like">
                         <svg width="20" height="20" fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
                         </svg>
-                        </button> --}}
+                        </button>
                     </div>
+                    <p class="text-sm text-slate-700">
+                        Free shipping on all continental US orders.
+                    </p>
                     </form>
                 </div>
-                
             </div>
-        {{-- </div> --}}
+        </div>
     </div>
-    <div class="absolute top-0 right-0 h-12 w-18 p-4" style="position: fixed;">
-        <button class="js-change-theme focus:outline-none">🌙</button>
-    </div>
-    <script>
-        const svgs = document.querySelector('.rating').children;
-        const id = document.getElementById('id');
-
-        for(let i = 0;i<svgs.length;i++){ 
-            svgs[i].onclick = ()=>{
-                for(let j = 0;j<=i;j++){
-                    svgs[j].classList.add("fill-yellow-400"); // this class should be added to whitelist while in production mode
-                }
-                for(let k = i + 1;k<svgs.length;k++){
-                    svgs[k].classList.remove("fill-yellow-400"); // this class should be added to whitelist while in production mode
-                }
-            }
-        }
-    </script>
 </section>

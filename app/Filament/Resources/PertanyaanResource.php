@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\PertanyaanResource\Pages;
 use App\Filament\Resources\PertanyaanResource\RelationManagers;
-use App\Models\Pertanyaan;
+use App\Models\Pertanyaans;
 use Filament\Forms;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class PertanyaanResource extends Resource
 {
-    protected static ?string $model = Pertanyaan::class;
+    protected static ?string $model = Pertanyaans::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 

@@ -2,92 +2,65 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>SKM</title>
-    <meta content="" name="description">
-
-    <meta content="" name="keywords">
-
-    <!-- Favicons -->
-    {{-- <link href="assets/img/favicon.png" rel="icon"> --}}
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>SKM</title>
+	<meta name="author" content="name" />
+	<meta name="description" content="description here" />
+	<meta name="keywords" content="keywords,here" />
+	@vite('resources/css/app.css')
     <link href="logo-skm.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-    <!-- Nucleo Icons -->
-    <link href="css/nucleo-icons.css" rel="stylesheet">
-    <link href="css/nucleo-svg.css" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link href="css/font-awesome.css" rel="stylesheet">
-    <link href="css/nucleo-svg.css" rel="stylesheet">
-    <!-- CSS Files -->
-    <link href="css/argon-design-system.css?v=1.2.0" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css">
-
-    <!-- =======================================================
-  * Template Name: FlexStart - v1.12.0
-  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-  @livewireStyles
+	<!-- <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/> -->
+	<!--Replace with your tailwind.css once created-->
+    @livewireStyles
 </head>
 
-<body>
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="header fixed-top">
-        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+<body class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover pt-20" 
+{{-- style="background-image:url('https://source.unsplash.com/1L71sPT5XKc');"> --}}
+style="background-image:url('bg.jpg');">
+    <nav id="header" class="fixed w-full z-0 top-0">
 
-            <a href="/" class="logo d-flex align-items-center">
-                {{-- <img src="assets/img/logo.png" alt=""> --}}
-                <img src="logo-skm.png" alt="">
-                <span>SKM</span>
-            </a>
+		<div id="progress" class="h-1 z-20 top-0"
+			style="background:linear-gradient(to right, #f7fafa var(--scroll), transparent 0);"></div>
 
-            <div style="position: fixed; bottom: 0px; left: 10px;width:130px;height:160px;">
-                <a href="/" target="_blank">
-                    <img border="0" src="http://s.myniceprofile.com/myspacepic/742/th/74214.gif" alt="animasi bergerak gif" />
-                    {{-- <img border="0" src="emot.gif" alt="animasi bergerak gif" /> --}}
-                </a>
-            </div>
+		<div class="w-full md:max-w-4xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
 
-            <nav id="navbar" class="navbar">
+			<div class="pl-4">
+				<a class="text-green-500 text-base no-underline hover:no-underline font-extrabold text-xl" href="#">
+                    <img src="logo-skm.png" alt="" style="width: 50px;" class="z-20">
+					SKM
+				</a>
+			</div>
+
+			<div class="block lg:hidden pr-4">
                 
-                <i class="mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
+			</div>
 
+		</div>
+	</nav>
+
+    {{ $slot }}
+    
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="text-center">
+
+        
+
+        <div class="text-center mb-2">
+            {{-- <div class="credits"> --}}
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
+                {{-- © Copyright @2023 <a href="https://dpmptsp.jatengprov.go.id/">by DPMPTSP JATENG</a> --}}
+            {{-- </div> --}}
         </div>
-    </header><!-- End Header -->
+    </footer><!-- End Footer -->
+    @livewireScripts
 
-    {{-- <livewire:portal> --}}
-
-
-            {{ $slot }}
-        
-        
-        @livewireScripts
-
-    <div id="background-wrap">
+    <div id="">
         <div class="bubble x1"></div>
         <div class="bubble x2"></div>
         <div class="bubble x3"></div>
@@ -100,21 +73,7 @@
         <div class="bubble x10"></div>
     </div>
 
-    <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer">
-
-        
-
-        <div class="container">
-            <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
-                © Copyright @2023 <a href="https://dpmptsp.jatengprov.go.id/">by DPMPTSP JATENG</a>
-            </div>
-        </div>
-    </footer><!-- End Footer -->
+    
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
@@ -153,6 +112,14 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <!--Plugin JavaScript file-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+        {{-- <script>
+            $(".js-range-slider").ionRangeSlider({
+                skin: "big",
+                from: "4",
+                grid : "true",
+                values : ['Tidak Baik', 'Kurang Baik', 'Baik', 'Sangat Baik']
+            });
+        </script> --}}
         <script>
             $(".js-range-slider").ionRangeSlider({
                 skin: "big",
@@ -161,6 +128,56 @@
                 values : ['Tidak Baik', 'Kurang Baik', 'Baik', 'Sangat Baik']
             });
         </script>
+
+        <script>
+            const svgs = document.querySelector('.rating1').children;
+            for(let i = 0;i<svgs.length;i++){ 
+                svgs[i].onclick = ()=>{
+                    for(let j = 0;j<=i;j++){
+                        svgs[j].classList.add("fill-yellow-200"); // this class should be added to whitelist while in production mode
+                    }
+                    for(let k = i + 1;k<svgs.length;k++){
+                        svgs[k].classList.remove("fill-yellow-200"); // this class should be added to whitelist while in production mode
+                    }
+                }
+            }
+        </script>
+
+
+      <script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
+      <script src="https://unpkg.com/tippy.js@4"></script>
+      <script>
+          //Init tooltips
+          tippy('.link',{
+            placement: 'bottom'
+          })
+  
+          //Toggle mode
+          const toggle = document.querySelector('.js-change-theme');
+          const body = document.querySelector('body');
+          const profile = document.getElementById('profile');
+          
+          
+          toggle.addEventListener('click', () => {
+  
+            if (body.classList.contains('text-gray-900')) {
+              toggle.innerHTML = "☀️";
+              body.classList.remove('text-gray-900');
+              body.classList.add('text-gray-100');
+              profile.classList.remove('bg-white');
+              profile.classList.add('bg-gray-900');
+            } else
+            {
+              toggle.innerHTML = "🌙";
+              body.classList.remove('text-gray-100');
+              body.classList.add('text-gray-900');
+              profile.classList.remove('bg-gray-900');			
+              profile.classList.add('bg-white');
+              
+            }
+          });
+          
+      </script>
 
 </body>
 
