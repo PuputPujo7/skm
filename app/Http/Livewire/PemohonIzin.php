@@ -5,13 +5,12 @@ namespace App\Http\Livewire;
 use App\Models\DataSkm;
 use App\Models\DataUser;
 use App\Models\Pertanyaans;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Livewire\Component;
-// use Livewire\Request;
+use Livewire\Request;
 
-class Portal extends Component
+class PemohonIzin extends Component
 {
     public function getData(Request $request){
         $nomor_tiket = $request->input('nomor_tiket');
@@ -88,78 +87,53 @@ class Portal extends Component
         Session::put('key', $store->id);
         return redirect()->route('livewire.pertanyaan');
     }
-    public function getPertanyaan(){
-        $pertanyaans = Pertanyaans::all();
-        //dd($pertanyaans);
-        Return view('form-skm', compact('pertanyaans'));
-    }
-    public function storeDataSKM(Request $request){
-        foreach ($request->except('_token') as $key => $datas){
-            if ($datas == "Tidak Baik"){
-                $data[$key] = 1;
-            }
-            elseif ($datas == "Kurang Baik"){
-                $data[$key] = 2;
-            }
-            elseif ($datas == "Baik"){
-                $data[$key] = 3;
-            }
-            else {
-                $data[$key] = 4;
-            }
-        }
-        $id = Session::get('key');
-        $result = round(array_sum($data) / count($data) * 25 , 2);
-        $store = new DataSkm();
-        $store->user_id = $id;
-        $store->p1 = $data['p1'];
-        $store->p2 = $data['p2'];
-        $store->p3 = $data['p3'];
-        $store->p4 = $data['p4'];
-        $store->p5 = $data['p5'];
-        $store->p6 = $data['p6'];
-        $store->p7 = $data['p7'];
-        $store->p8 = $data['p8'];
-        $store->p9 = $data['p9'];
-        $store->hasil_skm = $result;
-        //dd($store);
-        $store->save();
-
-        Session::put('hasil', $result);
-        Return redirect()->route('result-skm');
-    }
-    public function getResultSKM(){
-        $res = Session::get('hasil');
-
-        Return view('result-skm', compact('res'));
-    }
-    // public function getTotalSKM(){
-    //     $skms_this_month = DataSkm::whereYear('created_at', '=', Carbon::now()->year)->whereMonth('created_at', '=', Carbon::now()->month)->get();
-    //     $skms_previous_month = DataSkm::whereYear('created_at', '=', Carbon::now()->subMonth()->format('Y'))->whereMonth('created_at', '=', Carbon::now()->subMonth()->format('m'))->get();
-    //     if ($skms_this_month->isEmpty()){
-    //         $total_this_month = '00.00';
-    //     }
-    //     else{
-    //         $total_skm_this_month = 0;
-    //         foreach ($skms_this_month as $key=>$skm_this_month){
-    //             $total_skm_this_month += $skm_this_month->hasil_skm;
+    // public function getPertanyaan(){
+    //     $pertanyaans = Pertanyaans::all();
+    //     //dd($pertanyaans);
+    //     Return view('form-skm', compact('pertanyaans'));
+    // }
+    // public function storeDataSKM(Request $request){
+    //     foreach ($request->except('_token') as $key => $datas){
+    //         if ($datas == "Tidak Baik"){
+    //             $data[$key] = 1;
     //         }
-    //         $total_this_month = round($total_skm_this_month / count($skms_this_month), 2);
-    //     }
-    //     if($skms_previous_month->isEmpty()){
-    //         $total_previous_month = '00.00';
-    //     }
-    //     else{
-    //         $total_skm_previous_month = 0;
-    //         foreach ($skms_previous_month as $key=>$skm_previous_month){
-    //             $total_skm_previous_month += $skm_previous_month->hasil_skm;
+    //         elseif ($datas == "Kurang Baik"){
+    //             $data[$key] = 2;
     //         }
-    //         $total_previous_month = round($total_skm_previous_month / count($skms_previous_month), 2);
+    //         elseif ($datas == "Baik"){
+    //             $data[$key] = 3;
+    //         }
+    //         else {
+    //             $data[$key] = 4;
+    //         }
     //     }
-    //     return view('total-skm', compact('total_this_month', 'total_previous_month'));
+    //     $id = Session::get('key');
+    //     $result = round(array_sum($data) / count($data) * 25 , 2);
+    //     $store = new DataSkm();
+    //     $store->user_id = $id;
+    //     $store->p1 = $data['p1'];
+    //     $store->p2 = $data['p2'];
+    //     $store->p3 = $data['p3'];
+    //     $store->p4 = $data['p4'];
+    //     $store->p5 = $data['p5'];
+    //     $store->p6 = $data['p6'];
+    //     $store->p7 = $data['p7'];
+    //     $store->p8 = $data['p8'];
+    //     $store->p9 = $data['p9'];
+    //     $store->hasil_skm = $result;
+    //     //dd($store);
+    //     $store->save();
+
+    //     Session::put('hasil', $result);
+    //     Return redirect()->route('result-skm');
+    // }
+    // public function getResultSKM(){
+    //     $res = Session::get('hasil');
+
+    //     Return view('result-skm', compact('res'));
     // }
     public function render()
     {
-        return view('livewire.portal');
+        return view('livewire.pemohon-izin');
     }
 }

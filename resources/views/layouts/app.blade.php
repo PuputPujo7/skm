@@ -14,6 +14,7 @@
 	<!-- <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/> -->
 	<!--Replace with your tailwind.css once created-->
     @livewireStyles
+    <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
 </head>
 
 
@@ -43,37 +44,17 @@ style="background-image:url('bg.jpg');">
 
     {{ $slot }}
     
-    <!-- ======= Footer ======= -->
-    <footer id="footer" class="text-center">
-
-        
-
-        <div class="text-center mb-2">
-            {{-- <div class="credits"> --}}
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
-                {{-- © Copyright @2023 <a href="https://dpmptsp.jatengprov.go.id/">by DPMPTSP JATENG</a> --}}
-            {{-- </div> --}}
-        </div>
-    </footer><!-- End Footer -->
-    @livewireScripts
-
-    <div id="">
-        <div class="bubble x1"></div>
-        <div class="bubble x2"></div>
-        <div class="bubble x3"></div>
-        <div class="bubble x4"></div>
-        <div class="bubble x5"></div>
-        <div class="bubble x6"></div>
-        <div class="bubble x7"></div>
-        <div class="bubble x8"></div>
-        <div class="bubble x9"></div>
-        <div class="bubble x10"></div>
-    </div>
-
     
+
+    <!-- ======= Footer ======= -->
+    {{-- <footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 z-100 text-center">
+		<span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+            © 2023 
+            <a href="https://dpmptsp.jatengprov.go.id" class="hover:underline" target="_blank">DPMPTSP Jateng</a>
+        </span>
+	</footer> --}}
+    <!-- End Footer -->
+    @livewireScripts
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
@@ -89,6 +70,34 @@ style="background-image:url('bg.jpg');">
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <!-- button scrolltoTop-->
+    <button x-data="topBtn" @click="scrolltoTop" id="topButton"
+    class="fixed z-10 hidden p-3 bg-gray-100 rounded-full shadow-md bottom-10 right-10 animate-bounce">
+    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18">
+        </path>
+    </svg>
+    </button>
+
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('topBtn', () => ({
+                scrolltoTop() {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                }
+            }));
+        });
+
+        const topBtn = document.getElementById("topButton");
+        window.onscroll = () => {
+            (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ?
+            topBtn.classList.remove("hidden"): topBtn.classList.add("hidden");
+
+        }
+    </script>
 
     <script>
         function scrollToDownload() {
@@ -120,29 +129,6 @@ style="background-image:url('bg.jpg');">
                 values : ['Tidak Baik', 'Kurang Baik', 'Baik', 'Sangat Baik']
             });
         </script> --}}
-        <script>
-            $(".js-range-slider").ionRangeSlider({
-                skin: "big",
-                from: "4",
-                grid : "true",
-                values : ['Tidak Baik', 'Kurang Baik', 'Baik', 'Sangat Baik']
-            });
-        </script>
-
-        <script>
-            const svgs = document.querySelector('.rating1').children;
-            for(let i = 0;i<svgs.length;i++){ 
-                svgs[i].onclick = ()=>{
-                    for(let j = 0;j<=i;j++){
-                        svgs[j].classList.add("fill-yellow-200"); // this class should be added to whitelist while in production mode
-                    }
-                    for(let k = i + 1;k<svgs.length;k++){
-                        svgs[k].classList.remove("fill-yellow-200"); // this class should be added to whitelist while in production mode
-                    }
-                }
-            }
-        </script>
-
 
       <script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
       <script src="https://unpkg.com/tippy.js@4"></script>

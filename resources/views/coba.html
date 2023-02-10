@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"> -->
+    <title>Document</title>
+</head>
+<body>
+    <div class="rating1">
+        <input type="radio" id="star1"><label for="star1"></label>  
+        <input type="radio" id="star2"><label for="star2"></label>
+        <input type="radio" id="star3"><label for="star3"></label>
+        <input type="radio" id="star4"><label for="star4"></label>  
+    </div>
+    <style>
+        body
+        {
+            /* margin: 0;
+            padding: 0; */
+            background: #060606;
+        }
+        .rating1
+        {
+            margin: 190px auto;
+            width: 400px;
+            /* position: absolute; */
+            /* top: 50%;
+            left: 50%; */
+            /* transform: translate(-50%, -50%)  */
+            /* rotate(180 deg) */
+            /* ;
+            display: flex; */
+        }
+        .rating1 >*
+        {
+            /* display: none; */
+            float: right;
+        }
+        .rating1 input
+        {
+            display: none;
+            /* float: right; */
+        }
+        .rating1 label
+        {
+            display: block;
+            cursor: pointer;
+            width: 20%;
+            height: 40px;
+            position: relative;
+            /* background: #ccc; */
+        }
+        /* .rating1 label:before
+        {
+            content: '\f005';
+            font-family: fontAwesome;
+            position: relative;
+            display: block;
+            font-size: 50px;
+            color: #101010;
+        } */
+        .rating1 label::after
+        {
+            content: '☆';
+            /* font-family: fontAwesome; */
+            position: absolute;
+            /* display: block; */
+            font-size: 80px;
+            color: #444;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            -webkit-font-smoothing: antialiased;
+            -webkit-animation: 1s pulse ease;
+            animation: 1s pulse ease;
+            /* opacity: 1; */
+            transition: all 0.4s ease-out;
+            /* text-shadow: 0 2px 5px rgba(0,0,0,.5); */
+        }
+        .rating1 label:hover::after
+        /* .rating1 label:hover:after,
+        .rating1 label:hover ~ label:after,
+        .rating1 input:checked ~ label:after */
+        {
+            /* opacity: 1; */
+            color: #5e5e5e;
+            text-shadow: 0 0 15px #5e5e5e;
+        }
+        .rating1 input:checked + label::after,
+        .rating1 input:checked ~ label::after
+        {
+            content: '★';
+            color: #f9bf3b;
+            text-shadow: 0 0 20px #f9bf3b;
+        }
+
+    </style>
+    <script src="js/addons/rating.js"></script>
+    <script>
+      // Rating Initialization
+      $(document).ready(function() {
+      $('#rateMe1').mdbRate();
+      });
+    </script>
+</body>
+</html>

@@ -15,9 +15,9 @@ class Pertanyaan extends Component
         return view('livewire.pertanyaan', compact('pertanyaans'));
         // return view('livewire.pertanyaan');
     }
-    public $data_skms;
-    public function mount()
-    {
-        $this->data_skms = Rating::all();
-    }
+    // public $pertanyaans;
+    // public function mount($id)
+    // {
+    //     $pertanyaans=$this->pertanyaans;
+    // }
 }

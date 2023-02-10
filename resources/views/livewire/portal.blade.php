@@ -2,7 +2,7 @@
 <div class="max-w-4xl flex items-center h-full lg:h-screen flex-wrap mx-auto my-48 lg:my-0">
       
     <!--Main Col-->
-    <div id="profile" class="w-full lg:w-full lg:rounded-l-lg lg:rounded-r-lg shadow-2xl bg-white opacity-75 mx-6 lg:mx-0 rounded">
+    <div id="profile" class="w-full lg:w-full lg:rounded-l-lg lg:rounded-r-lg shadow-2xl bg-white opacity-85 mx-6 lg:mx-0 rounded">
     
 
         <div class="p-4 md:p-12 text-center lg:text-left">
@@ -24,21 +24,28 @@
 
             <div class="container px-4">
               <div class="font-sans rounded-lg p-4 text-center">
+                  @if (session()->has('bad'))
+                    <div class="alert alert-danger">
+                      {{session()->get('bad')}}
+                    </div>
+                  @endif
                   <h3 class="font-bold break-normal text-sm md:text-base">Silahkan Masukkan Nomor Tiket Izin/Nomor Antrian Anda</h3>
                   <div class="w-full text-center pt-4">
-                      <form action="#">
+                      <form action="{{route('livewire.pemohon-izin')}}">
+                        @csrf
                             <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
                               <input type="number" placeholder="000012345"
                                   {{-- class="flex-1 mt-4 block md:inline-block  border border-gray-400 p-3 appearance-none text-gray-600 text-base font-semibold tracking-wider uppercase py-4 rounded shadow-md"> --}}
-                                  class="flex-1 mt-4 block md:inline-block appearance-none text-white text-base font-semibold tracking-wider uppercase py-4 border border-blue-400 p-3 text-gray-600 rounded shadow">
+                                  class="w-full rounded-md border py-3 px-6 text-base font-medium text-gray-600 border-blue-400 focus:shadow-md">
                             </div>
-                            <a href="">
+                            {{-- <a href="/pemohon-izin"> --}}
                             <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
                               <button type="submit"
                                   class="flex-1 mt-4 block md:inline-block appearance-none bg-blue-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-blue-600">SUBMIT !</button>
                             </div>
-                            </a>
-                            <a href="https://skm.dpmptsp.jatengprov.go.id/data-pemohon-manual">
+                            {{-- </a> --}}
+                      </form>
+                            <a href="/pemohon">
                             <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
                                 <button type="submit"
                                     class="flex-1 mt-4 block md:inline-block appearance-none bg-red-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-red-600">TIDAK MEMILIKI NOMOR TIKET?</button>
@@ -53,7 +60,7 @@
                                     </div>
                                 </div>
                             </div>
-                      </form>
+                      
                   </div>
               </div>
           </div>

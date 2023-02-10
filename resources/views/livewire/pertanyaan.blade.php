@@ -1,4 +1,4 @@
-<section id="hero" class="hero d-flex align-items-center">
+<section id="hero" class="hero d-flex align-items-center mb-3">
     {{-- <div class="container py-md rounded">
         <div class="col-lg-12">
             <div class="bg-blue-400 shadow border-0 rounded">
@@ -290,9 +290,9 @@
         </div>
     </div> --}}
     <!-- component -->
-    <div class="max-w-4xl flex items-center h-full lg:h-screen flex-wrap mx-auto my-48 lg:my-0">
+    <div class="max-w-4xl flex items-center h-full lg:h-screen flex-wrap mx-auto my-48 lg:my-0 mb-3">
         {{-- <div class="col-lg-12 rounded"> --}}
-            <div  id="id" class="bg-white shadow border-0 rounded">
+            <div  id="profile" class="bg-white shadow border-0 rounded mb-3">
                 {{-- <div class="card-header bg-white pb-5"> --}}
                     <div class="text-muted text-center p-3 font-semibold border-b border-green-200">
                         <h4>Form Survey Kepuasan Masyarakat</h4>
@@ -305,35 +305,36 @@
                     @foreach ($pertanyaans as $pertanyaan)
                     <form class="flex-auto p-6">
                         <h5 class="text-dark font-weight-bold">{{ $pertanyaan->pertanyaan }}</h5>
+                        <livewire:star>
                         {{-- <h5 class="text-dark font-weight-bold">Bagaimana pemahaman saudara tentang kemudahan
                             prosedur pelayanan dan pengaduan di Dinas Perizinan?</h5> --}}
                     {{-- @endforeach --}}
                     <!-- rating -->
                     {{-- @foreach ($data_skms as $data) --}}
-                    <div class="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
-                        <div class='rating flex flex-row justify-center gap-3'>
-                            <svg class="h-12 transition-all duration-100 fill-gray-400  fill-yellow-400  cursor-pointer"
+                    {{-- <div class="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
+                        <div id="rating" class='rating flex flex-row justify-center gap-3'>
+                            <svg class="h-12 transition-all duration-100 fill-gray-400 fill-yellow-400 cursor-pointer"
                                 viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <path
                                     d="M575.852903 115.426402L661.092435 288.054362c10.130509 20.465674 29.675227 34.689317 52.289797 37.963825l190.433097 27.62866c56.996902 8.288598 79.7138 78.281203 38.475467 118.496253l-137.836314 134.35715c-16.372539 15.963226-23.84251 38.987109-19.954032 61.49935l32.540421 189.716799c9.721195 56.792245-49.833916 100.077146-100.793444 73.267113L545.870691 841.446188a69.491196 69.491196 0 0 0-64.67153 0l-170.376737 89.537324c-50.959528 26.810033-110.51464-16.474868-100.793444-73.267113L242.569401 667.9996c3.888478-22.512241-3.581493-45.536125-19.954032-61.49935L84.779055 472.245428c-41.238333-40.215049-18.521435-110.207655 38.475467-118.496252l190.433097-27.62866c22.61457-3.274508 42.159288-17.498151 52.289797-37.963826L451.319277 115.426402c25.479764-51.675827 99.053862-51.675827 124.533626 0z"
                                     ></path>
                             </svg>
-                            <svg class="h-12 transition-all duration-100 fill-gray-400  cursor-pointer"
+                            <svg class="h-12 transition-all duration-100 fill-gray-400 fill-yellow-400 cursor-pointer"
                                 viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <path
                                     d="M575.852903 115.426402L661.092435 288.054362c10.130509 20.465674 29.675227 34.689317 52.289797 37.963825l190.433097 27.62866c56.996902 8.288598 79.7138 78.281203 38.475467 118.496253l-137.836314 134.35715c-16.372539 15.963226-23.84251 38.987109-19.954032 61.49935l32.540421 189.716799c9.721195 56.792245-49.833916 100.077146-100.793444 73.267113L545.870691 841.446188a69.491196 69.491196 0 0 0-64.67153 0l-170.376737 89.537324c-50.959528 26.810033-110.51464-16.474868-100.793444-73.267113L242.569401 667.9996c3.888478-22.512241-3.581493-45.536125-19.954032-61.49935L84.779055 472.245428c-41.238333-40.215049-18.521435-110.207655 38.475467-118.496252l190.433097-27.62866c22.61457-3.274508 42.159288-17.498151 52.289797-37.963826L451.319277 115.426402c25.479764-51.675827 99.053862-51.675827 124.533626 0z"
                                     ></path>
                             </svg>
-                            <svg class="h-12 transition-all duration-100 fill-gray-400  cursor-pointer"
+                            <svg class="h-12 transition-all duration-100 fill-gray-400 fill-yellow-400 cursor-pointer"
                                 viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <path
                                     d="M575.852903 115.426402L661.092435 288.054362c10.130509 20.465674 29.675227 34.689317 52.289797 37.963825l190.433097 27.62866c56.996902 8.288598 79.7138 78.281203 38.475467 118.496253l-137.836314 134.35715c-16.372539 15.963226-23.84251 38.987109-19.954032 61.49935l32.540421 189.716799c9.721195 56.792245-49.833916 100.077146-100.793444 73.267113L545.870691 841.446188a69.491196 69.491196 0 0 0-64.67153 0l-170.376737 89.537324c-50.959528 26.810033-110.51464-16.474868-100.793444-73.267113L242.569401 667.9996c3.888478-22.512241-3.581493-45.536125-19.954032-61.49935L84.779055 472.245428c-41.238333-40.215049-18.521435-110.207655 38.475467-118.496252l190.433097-27.62866c22.61457-3.274508 42.159288-17.498151 52.289797-37.963826L451.319277 115.426402c25.479764-51.675827 99.053862-51.675827 124.533626 0z"
                                     ></path>
                             </svg>
-                            <svg class="h-12 transition-all duration-100 fill-gray-400  cursor-pointer"
+                            <svg class="h-12 transition-all duration-100 fill-gray-400 fill-yellow-400 cursor-pointer"
                                 viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <path
@@ -341,8 +342,83 @@
                                     ></path>
                             </svg>
                         </div> 
-                        
+                        <script>
+                            const svgs = document.querySelector('.rating').children;
+                    
+                            for(let i = 0;i<svgs.length;i++){ 
+                                svgs[i].onclick = ()=>{
+                                    for(let j = 0;j<=i;j++){
+                                        svgs[j].classList.add("fill-yellow-400"); // this class should be added to whitelist while in production mode
+                                    }
+                                    for(let k = i + 1;k<svgs.length;k++){
+                                        svgs[k].classList.remove("fill-yellow-400"); // this class should be added to whitelist while in production mode
+                                    }
+                                }
+                            }
+                        </script>
+                    </div> --}}
+                    {{-- <div class="rating1">
+                        <input type="radio" id="star1"><label for="star1"></label>  
+                        <input type="radio" id="star2"><label for="star2"></label>
+                        <input type="radio" id="star3"><label for="star3"></label>
+                        <input type="radio" id="star4"><label for="star4"></label>  
                     </div>
+                    <style>
+                        /* body
+                        {
+                            background: #060606;
+                        } */
+                        .rating1
+                        {
+                            margin: 190px auto;
+                            width: 400px;
+                        }
+                        .rating1 >*
+                        {
+                            float: right;
+                        }
+                        .rating1 input
+                        {
+                            display: none;
+                        }
+                        .rating1 label
+                        {
+                            display: block;
+                            cursor: pointer;
+                            width: 20%;
+                            height: 40px;
+                            position: relative;
+                        }
+                        .rating1 label::after
+                        {
+                            content: '☆';
+                            position: relative;
+                            font-size: 60px;
+                            color: #444;
+                            top: 0;
+                            left: 0;
+                            height: 100%;
+                            width: 100%;
+                            /* text-align: center; */
+                            -webkit-font-smoothing: antialiased;
+                            -webkit-animation: 1s pulse ease;
+                            animation: 1s pulse ease;
+                            transition: all 0.4s ease-out;
+                        }
+                        .rating1 label:hover::after
+                        {
+                            color: #5e5e5e;
+                            text-shadow: 0 0 15px #5e5e5e;
+                        }
+                        .rating1 input:checked + label::after,
+                        .rating1 input:checked ~ label::after
+                        {
+                            content: '★';
+                            color: #f9bf3b;
+                            text-shadow: 0 0 20px #f9bf3b;
+                        }
+                
+                    </style> --}}
                     @endforeach
                     
                     <div class="flex space-x-4 mb-6 text-sm font-medium">
@@ -351,11 +427,6 @@
                             Submit
                         </button>
                         </div>
-                        {{-- <button class="flex-none flex items-center justify-center w-9 h-9 rounded-md text-slate-300 border border-slate-200" type="button" aria-label="Like">
-                        <svg width="20" height="20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
-                        </svg>
-                        </button> --}}
                     </div>
                     </form>
                 </div>
@@ -366,19 +437,5 @@
     <div class="absolute top-0 right-0 h-12 w-18 p-4" style="position: fixed;">
         <button class="js-change-theme focus:outline-none">🌙</button>
     </div>
-    <script>
-        const svgs = document.querySelector('.rating').children;
-        const id = document.getElementById('id');
-
-        for(let i = 0;i<svgs.length;i++){ 
-            svgs[i].onclick = ()=>{
-                for(let j = 0;j<=i;j++){
-                    svgs[j].classList.add("fill-yellow-400"); // this class should be added to whitelist while in production mode
-                }
-                for(let k = i + 1;k<svgs.length;k++){
-                    svgs[k].classList.remove("fill-yellow-400"); // this class should be added to whitelist while in production mode
-                }
-            }
-        }
-    </script>
+    
 </section>
