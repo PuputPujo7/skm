@@ -5,15 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DataSkm extends Model
+class Cobas extends Model
 {
     use HasFactory;
-    protected $guarded=[];
-    protected $table ='hasil_ratings';
+    protected  $guarded=[];
+    protected $table ='cobas';
     protected $fillable = [
-        'pemohon_id',
-        'pertanyaan_id',
-        'answer',
-        'review',
+    'nama',
+    'alamat',
     ];
 }

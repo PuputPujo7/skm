@@ -9,11 +9,11 @@ class SurveySkm extends Model
 {
     // use HasFactory;
     protected $casts = [
-        'answer_options' => 'array'
+        'answer' => 'array'
       ];
   
       protected $fillable = [
-          'question',
-          'answer_options',
+          'rating',
+          'answer',
       ];
   }

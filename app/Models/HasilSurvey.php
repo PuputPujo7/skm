@@ -18,8 +18,8 @@ class HasilSurvey extends Model
     use HasFactory;
 
     protected $fillable = [
-        // 'lakone_pandu_id',
-        'survey_skm_id',
+        'pemohon_id',
+        'pertanyaan_id',
         'amount',
     ];
 

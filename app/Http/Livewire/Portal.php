@@ -160,6 +160,6 @@ class Portal extends Component
     // }
     public function render()
     {
-        return view('livewire.portal');
+        return view('livewire.portal')->extends('layouts.app1');
     }
 }

@@ -10,7 +10,8 @@
             <div class="p-4 md:p-12 text-center lg:text-left ">
 
                 <!-- component -->
-                <form method="POST">
+                <form method="POST"
+                    wire:submit.prevent="submit">
                     @csrf
                     <div class="mb-5">
                         <label for="number" class="mb-3 mt-3 block text-base font-medium text-gray-600">
@@ -100,16 +101,12 @@
                         </button>
                         </a>
                     </div>
-                    {{-- <div class="w-full text-center pt-4">
-                        <a href="">
-                            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
-                                <button type="submit"
-                                    class="flex-1 mt-4 block md:inline-block appearance-none bg-blue-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-blue-600">LANJUT
-                                    !</button>
-                            </div>
-                        </a>
+                    {{-- <div>
+                        <button type="submit" class="w-full rounded-md border py-3 px-6 text-base font-medium outline-none focus:shadow-md text-white bg-blue-500 hover:bg-blue-600">
+                            LANJUT!
+                        </button>
                     </div> --}}
-                </form>       
+                </form>   
             </div>
 
         </div>

@@ -12,7 +12,7 @@ class Pertanyaan extends Component
     {
         $this->pertanyaans = Pertanyaans::all();
         $pertanyaans=$this->pertanyaans;
-        return view('livewire.pertanyaan', compact('pertanyaans'));
+        return view('livewire.pertanyaan', compact('pertanyaans'))->extends('layouts.app1');
         // return view('livewire.pertanyaan');
     }
     // public $pertanyaans;

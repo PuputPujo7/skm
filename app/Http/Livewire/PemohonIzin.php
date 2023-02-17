@@ -134,6 +134,6 @@ class PemohonIzin extends Component
     // }
     public function render()
     {
-        return view('livewire.pemohon-izin');
+        return view('livewire.pemohon-izin')->extends('layouts.app1');
     }
 }

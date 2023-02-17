@@ -10,33 +10,35 @@
             <div class="p-4 md:p-12 text-center lg:text-left ">
 
                 <!-- component -->
-                <form method="POST">
+                <form 
+                {{-- method="POST"  --}}
+                wire:submit.prevent="submit">
                     <div class="mb-5">
-                        <label for="name" class="mb-3 mt-3 block text-base font-medium text-gray-600">
+                        <label for="nama" class="mb-3 mt-3 block text-base font-medium text-gray-600">
                             Nama 
                         </label>
-                        <input type="text" name="name" id="name" placeholder="Nama"
-                            class="w-full rounded-md border py-3 px-6 text-base font-medium text-gray-600 outline-none focus:border-blue-400 focus:shadow-md" />
+                        <input type="text" name="nama" id="nama" placeholder="Nama" wire:model="nama"
+                            class="w-full rounded-md border py-3 px-6 text-base font-medium text-gray-600 outline-none focus:border-blue-400 focus:shadow-md" required/>
                     </div>
                     <div class="mb-5">
-                        <label for="address" class="mb-3 mt-3 block text-base font-medium text-gray-600">
+                        <label for="alamat" class="mb-3 mt-3 block text-base font-medium text-gray-600">
                             Alamat 
                         </label>
-                        <input type="text" name="address" id="address" placeholder="Alamat"
-                            class="w-full rounded-md border py-3 px-6 text-base font-medium text-gray-600 outline-none focus:border-blue-400 focus:shadow-md" />
+                        <input type="text" name="alamat" id="alamat" placeholder="Alamat" wire:model="alamat"
+                            class="w-full rounded-md border py-3 px-6 text-base font-medium text-gray-600 outline-none focus:border-blue-400 focus:shadow-md" required/>
                     </div>
                     <div class="mb-5">
-                        <label for="number" class="mb-3 mt-3 block text-base font-medium text-gray-600">
+                        <label for="no_telp" class="mb-3 mt-3 block text-base font-medium text-gray-600">
                             No. Telp./HP
                         </label>
-                        <input type="number" name="number" id="number" placeholder="081234567890"
-                            class="w-full rounded-md border py-3 px-6 text-base font-medium text-gray-600 outline-none focus:border-blue-400 focus:shadow-md" />
+                        <input type="no_telp" name="no_telp" id="number" placeholder="081234567890" wire:model="no_telp"
+                            class="w-full rounded-md border py-3 px-6 text-base font-medium text-gray-600 outline-none focus:border-blue-400 focus:shadow-md" required/>
                     </div>
                     <div class="mb-5">
-                        <label for="address" class="mb-3 mt-3 block text-base font-medium text-gray-600">
+                        <label for="gender" class="mb-3 mt-3 block text-base font-medium text-gray-600">
                             Jenis Kelamin
                         </label>
-                            <select class="w-full rounded-md border py-3 px-6 text-base font-medium text-gray-600 outline-none focus:border-blue-400 focus:shadow-md">
+                            <select class="w-full rounded-md border py-3 px-6 text-base font-medium text-gray-600 outline-none focus:border-blue-400 focus:shadow-md" required  wire:model="jenis_kelamin">
                                 <option selected>Pilih</option>
                                 <option value="Laki-Laki">Laki-Laki</option>
                                 <option value="Perempuan">Perempuan</option>
@@ -44,17 +46,17 @@
                             </select>
                     </div>
                     <div class="mb-5">
-                        <label for="number" class="mb-3 mt-3 block text-base font-medium text-gray-600">
+                        <label for="usia" class="mb-3 mt-3 block text-base font-medium text-gray-600">
                             Usia
                         </label>
-                        <input type="number" name="number" id="number" placeholder=""
-                            class="w-full rounded-md border py-3 px-6 text-base font-medium text-gray-600 outline-none focus:border-blue-400 focus:shadow-md" />
+                        <input type="number" name="usia" id="number" placeholder="" wire:model="usia"
+                            class="w-full rounded-md border py-3 px-6 text-base font-medium text-gray-600 outline-none focus:border-blue-400 focus:shadow-md" required/>
                     </div>
                     <div class="mb-5">
-                        <label for="address" class="mb-3 mt-3 block text-base font-medium text-gray-600">
+                        <label for="pendidikan" class="mb-3 mt-3 block text-base font-medium text-gray-600">
                             Pendidikan
                         </label>
-                            <select class="w-full rounded-md border py-3 px-6 text-base font-medium text-gray-600 outline-none focus:border-blue-400 focus:shadow-md">
+                            <select class="w-full rounded-md border py-3 px-6 text-base font-medium text-gray-600 outline-none focus:border-blue-400 focus:shadow-md"  required  wire:model="pendidikan">
                                 <option selected>Pilih</option>
                                 <option>SD/Sederajat</option>
                                 <option>SMP/Sederajat</option>
@@ -70,10 +72,10 @@
                             </select>
                     </div>
                     <div class="mb-5">
-                        <label for="address" class="mb-3 mt-3 block text-base font-medium text-gray-600">
+                        <label for="jenis_layanan" class="mb-3 mt-3 block text-base font-medium text-gray-600">
                             Jenis Layanan
                         </label>
-                            <select class="w-full rounded-md border py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-blue-400 focus:shadow-md">
+                            <select class="w-full rounded-md border py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-blue-400 focus:shadow-md" required  wire:model="jenis_layanan">
                                 <option selected>Pilih</option>
                                 <option>Layanan Perizinan</option>
                                 <option>Layanan Pengaduan dan informasi</option>
@@ -81,23 +83,13 @@
                                 <option>Layanan OSS</option>
                             </select>
                     </div>
-                    <div class="mt-10">
-                        <a href="">
-                        <button class="w-full rounded-md border py-3 px-6 text-base font-medium outline-none focus:shadow-md text-white bg-blue-500 hover:bg-blue-600">LANJUT
-                            !
+                    {{-- <div> --}}
+                        <button type="submit" class="w-full rounded-md border py-3 px-6 text-base font-medium outline-none focus:shadow-md text-white bg-blue-500 hover:bg-blue-600">
+                            LANJUT!
                         </button>
-                        </a>
-                    </div>
-                    {{-- <div class="w-full text-center pt-4">
-                        <a href="">
-                            <div class="w-full max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
-                                <button type="submit"
-                                    class="w-full flex-1 mt-4 block md:inline-block appearance-none bg-blue-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-blue-600">LANJUT
-                                    !</button>
-                            </div>
-                        </a>
-                    </div> --}}
-                </form>       
+                    {{-- </div> --}}
+
+                </form> 
             </div>
 
         </div>

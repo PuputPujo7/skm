@@ -1,48 +1,66 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <title>SKM</title>
-        <meta name="application-name" content="{{ config('app.name') }}">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="logo-skm.png" rel="icon">
-        {{-- <title>{{ config('app.name') }}</title> --}}
+<html lang="en">
 
-        <style>[x-cloak] { display: none !important; }</style>
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-        @livewireStyles
-        @livewireScripts
-        @stack('scripts')
-    </head>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>SKM</title>
+	<meta name="author" content="name" />
+	<meta name="description" content="description here" />
+	<meta name="keywords" content="keywords,here" />
+	@vite('resources/css/app.css')
+    <link href="logo-skm.png" rel="icon">
+	<!-- <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/> -->
+	<!--Replace with your tailwind.css once created-->
+    @livewireStyles
+    <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+</head>
 
-    <body class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover pt-20" 
-    {{-- style="background-image:url('https://source.unsplash.com/1L71sPT5XKc');"> --}}
-    style="background-image:url('bg.jpg');">
-        <nav id="header" class="fixed w-full z-0 top-0">
 
-            <div id="progress" class="h-1 z-20 top-0"
-                style="background:linear-gradient(to right, #f7fafa var(--scroll), transparent 0);"></div>
+<body class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover pt-20" 
+{{-- style="background-image:url('https://source.unsplash.com/1L71sPT5XKc');"> --}}
+style="background-image:url('bg.jpg');">
+    <nav id="header" class="fixed w-full z-0 top-0">
 
-            <div class="w-full md:max-w-4xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+		<div id="progress" class="h-1 z-20 top-0"
+			style="background:linear-gradient(to right, #f7fafa var(--scroll), transparent 0);"></div>
 
-                <div class="pl-4">
-                    <a class="text-green-500 text-base no-underline hover:no-underline font-extrabold text-xl" href="#">
-                        <img src="logo-skm.png" alt="" style="width: 50px;" class="z-20">
-                        SKM
-                    </a>
-                </div>
+		<div class="w-full md:max-w-4xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
 
-                <div class="block lg:hidden pr-4">
-                    
-                </div>
+			<div class="pl-4">
+				<a class="text-green-500 text-base no-underline hover:no-underline font-extrabold text-xl" href="#">
+                    <img src="logo-skm.png" alt="" style="width: 50px;" class="z-20">
+					SKM
+				</a>
+			</div>
 
-            </div>
-        </nav>
-        {{ $slot }}
+			<div class="block lg:hidden pr-4">
+                
+			</div>
 
-        @livewire('notifications')
-        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+		</div>
+	</nav>
+
+    @yield('content')
+    
+    @isset($slot)
+    {{ $slot }}
+    @endisset
+    
+    
+
+    <!-- ======= Footer ======= -->
+    {{-- <footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 z-100 text-center">
+		<span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+            © 2023 
+            <a href="https://dpmptsp.jatengprov.go.id" class="hover:underline" target="_blank">DPMPTSP Jateng</a>
+        </span>
+	</footer> --}}
+    <!-- End Footer -->
+    @livewireScripts
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
@@ -150,5 +168,7 @@
           });
           
       </script>
-    </body>
+
+</body>
+
 </html>
